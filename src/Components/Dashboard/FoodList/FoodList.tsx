@@ -1,5 +1,4 @@
-import React from "react";
-import chapati from "../../../Assets/chapati.jpg";
+import chapati from "../../../assets/chapati.jpg";
 import styles from "./FoodList.module.scss";
 
 const foodItems = [
@@ -52,7 +51,7 @@ export default function FoodList() {
       {foodItems.map((items: any) => {
         return (
           <div className="col-3">
-            <div className="col-12">
+            <div className="col-12 cursor-pointer">
               <div className="text-center p-3 border-round-sm bg-primary font-bold">
                 <div className="images ">
                   <img
