@@ -1,4 +1,4 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const resturantList = [
   {
@@ -24,12 +24,18 @@ const resturantList = [
 ];
 
 export default function Dashboard() {
+
+  const navigate = useNavigate();
+
+  const navigateToShop =()=>{
+    navigate('')
+  }
   return (
     <div className="grid w-full ">
       {resturantList.map((item: any) => {
         return (
-          <div className="col-6">
-            <div className="text-center border-round-sm bg-primary font-bold">
+          <div className="col-6 ">
+            <div className="text-center border-round-sm bg-primary font-bold cursor-pointer" onClick={navigateToShop}>
               <h2>{item.name}</h2>
               <p>{item.vendor}</p>
             </div>
