@@ -7,22 +7,23 @@ import LTTSLogo from '../../assets/LTTSLogo.png';
 
 
 enum RoutePathEnum {
-  sharemeal="Share Meal",
-  dashboard="Dashboard",
-  analytics="Analytics"
+  sharemeal = "Share Meal",
+  dashboard = "Dashboard",
+  analytics = "Analytics",
+  resturantList = "resturant",
 }
 
 function getBreadcrumb(routePath: string): string {
-  return RoutePathEnum[routePath as keyof typeof RoutePathEnum] || "Unknown Route";
+  return (
+    RoutePathEnum[routePath as keyof typeof RoutePathEnum] || "Unknown Route"
+  );
 }
 
 const Navbar = () => {
   const location = useLocation();
-  const pathSegments = location.pathname.split('/').filter(Boolean);
+  const pathSegments = location.pathname.split("/").filter(Boolean);
   const lastSegment = pathSegments[pathSegments.length - 1];
   const breadcrumb = lastSegment ? getBreadcrumb(lastSegment) : "Unknown Route";
-
-
 
   const startContent = (
    
@@ -39,26 +40,21 @@ const Navbar = () => {
 
       </div>
   );
- 
 
-
-  const endContent = (
-            <ToogleTheme/>
-  );
+  const endContent = <ToogleTheme />;
 
   return (
     <>
-    <Toolbar
-      start={startContent}
-      end={endContent}
-      className={`surface-50 p-0 px-2 border-noround border-none ${styles['topbarContainer']}`}
-    />
-    <div className='flex justify-content-between'>
-      <p className='font-bold text-lg pl-3'>{breadcrumb}</p>
-    </div>
-</>
+      <Toolbar
+        start={startContent}
+        end={endContent}
+        className={`surface-50 p-0 px-2 border-noround border-none ${styles["topbarContainer"]}`}
+      />
+      <div className="flex justify-content-between">
+        <p className="font-bold text-lg pl-3">{breadcrumb}</p>
+      </div>
+    </>
   );
-}
+};
 
 export default Navbar;
-
