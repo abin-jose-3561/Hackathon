@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./Dashboard.module.scss";
-import TS1 from "../../assets/BgImages/TS1.jpg";
-import ModX from "../../assets/BgImages/ModX.jpg";
-import TS3 from "../../assets/BgImages/TS3.jpg";
-import SEZ from "../../assets/BgImages/TS1.jpg";
+import TS1 from "../../Assets/BgImages/TS1.jpg";
+import ModX from "../../Assets/BgImages/ModX.jpg";
+import TS3 from "../../Assets/BgImages/TS3.jpg";
+import SEZ from "../../Assets/BgImages/TS1.jpg";
 
 const resturantList = [
   {

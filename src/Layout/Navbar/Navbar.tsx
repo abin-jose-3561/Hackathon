@@ -3,7 +3,7 @@ import SidebarOverlay from "../Sidebar/Sidebar";
 import styles from "./Navbar.module.scss";
 import { Toolbar } from "primereact/toolbar";
 import { useLocation } from "react-router-dom";
-import LTTSLogo from "../../assets/LTTSLogo.png";
+import LTTSLogo from "../../Assets/LTTSLogo.png";
 
 enum RoutePathEnum {
   sharemeal = "Share Meal",

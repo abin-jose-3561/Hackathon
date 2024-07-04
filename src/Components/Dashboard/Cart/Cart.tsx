@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import QRcode from '../../../assets/QRcode.jpg';
-import styles from './Cart.module.scss'
+import { useState } from 'react'
+import QRcode from '../../../Assets/QRcode.jpg';
 import { Button } from 'primereact/button';
+import { Dialog } from 'primereact/dialog';
 
 const cartItems = [
     {
@@ -48,17 +48,21 @@ const cartItems = [
 
 export default function Cart() {
     const [showQR, setShowQR]= useState(false);
+    const [visible, setVisible] = useState(false);
     const handlePayment=()=>{
         setShowQR(true);
     }
-
+const handleTokengeneration = () =>{
+  setVisible(true);
+}
 
   return (
+    <>
     <div>
         {
             showQR ? <div className='flex align-items-center flex-column gap-3'>
                 <img src={QRcode} alt="QRcode" width='300px' height='300px'/> 
-                <div><Button>Generate Bill</Button></div>
+                <div><Button onClick={handleTokengeneration}>Generate OrderId</Button></div>
                 
             </div> :   <div style={{width:'50%', margin:'auto'}}>
             <div className='flex gap-8'>
@@ -84,7 +88,7 @@ export default function Cart() {
         <div style={{display:'flex',alignItems:'flex-end', justifyContent:'flex-end' }}>  <p style={{ width:'31%'}}>Total:800 Rs</p></div>
        
         <p style={{display:'flex', justifyContent:'center' }} className='flex mt-8'>
-        <button onClick={handlePayment} >Proceed To Payment</button>
+        <Button onClick={handlePayment} >Proceed To Payment</Button>
         </p>
         
     
@@ -92,6 +96,12 @@ export default function Cart() {
         }
     </div>
 
-  
+    <Dialog header="Your Order Id has been generated successfully!" visible={visible} style={{ width: '50vw' }} onHide={() => {if (!visible) return; setVisible(false); }}>
+    <p className="flex justify-content-center">
+       <h2>349</h2>
+    </p>
+</Dialog>
+
+  </>
   )
 }

@@ -1,4 +1,4 @@
-import chapati from "../../../assets/chapati.jpg";
+import chapati from "../../../Assets/chapati.jpg";
 import styles from "./FoodList.module.scss";
 
 const foodItems = [
