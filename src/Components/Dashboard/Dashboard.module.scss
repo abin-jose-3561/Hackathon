@@ -1,0 +1,37 @@
+.gridItem {
+  position: relative;
+  overflow: hidden; /* Ensures that the overlay does not overflow the container */
+  background-size: cover;
+  background-position: center;
+
+  /* Ensure the content inside is above the overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.5
+    ); /* Light overlay color with opacity */
+    z-index: 1; /* Ensure overlay is on top of the background image but below the content */
+  }
+  &:hover:before {
+    background-color: rgba(255, 255, 255, 0);
+    /* Remove the overlay on hover */
+  }
+  .content {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 2; /* Ensure content is above the overlay */
+    text-align: center;
+    color: #fff; /* Adjust text color if needed for better contrast */
+  }
+}

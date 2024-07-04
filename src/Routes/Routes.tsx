@@ -11,7 +11,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/restaurant/:name" element={<FoodList />} />
+          <Route path="/dashboard/restaurant/:name" element={<FoodList />} />
           <Route path="/analytics" element={<MostOrderedFood />} />
           <Route
             path="/*"
