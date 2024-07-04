@@ -4,47 +4,47 @@ import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 
 const cartItems = [
-    {
-      name: "Chapati",
-      id: 1,
-      description: "good Food good Mood",
-      statusAvailability: "available",
-      imageUrl: "",
-      restaurantId: 1,
-      rating: 3,
-      price: 20,
-    },
-    {
-      name: "Rice",
-      id: 2,
-      description: "good Food good Mood",
-      statusAvailability: "available",
-      imageUrl: "",
-      restaurantId: 1,
-      rating: 2,
-      price: 30,
-    },
-    {
-      name: "Chicken",
-      id: 3,
-      description: "good Food good Mood",
-      statusAvailability: "out of stock",
-      imageUrl: "",
-      restaurantId: 1,
-      rating: 4,
-      price: 50,
-    },
-    {
-      name: "Fish",
-      id: 4,
-      description: "good Food good Mood",
-      statusAvailability: "available",
-      imageUrl: "",
-      restaurantId: 1,
-      rating: 5,
-      price: 40,
-    },
-  ];
+  {
+    name: "Chapati",
+    id: 1,
+    description: "good Food good Mood",
+    statusAvailability: "available",
+    imageUrl: "",
+    restaurantId: 1,
+    rating: 3,
+    price: 20,
+  },
+  {
+    name: "Rice",
+    id: 2,
+    description: "good Food good Mood",
+    statusAvailability: "available",
+    imageUrl: "",
+    restaurantId: 1,
+    rating: 2,
+    price: 30,
+  },
+  {
+    name: "Chicken",
+    id: 3,
+    description: "good Food good Mood",
+    statusAvailability: "out of stock",
+    imageUrl: "",
+    restaurantId: 1,
+    rating: 4,
+    price: 50,
+  },
+  {
+    name: "Fish",
+    id: 4,
+    description: "good Food good Mood",
+    statusAvailability: "available",
+    imageUrl: "",
+    restaurantId: 1,
+    rating: 5,
+    price: 40,
+  },
+];
 
 export default function Cart() {
     const [showQR, setShowQR]= useState(false);
@@ -93,7 +93,7 @@ const handleTokengeneration = () =>{
         
     
         </div>
-        }
+      }
     </div>
 
     <Dialog header="Your Order Id has been generated successfully!" visible={visible} style={{ width: '50vw' }} onHide={() => {if (!visible) return; setVisible(false); }}>

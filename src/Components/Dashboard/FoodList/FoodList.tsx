@@ -1,5 +1,7 @@
 import chapati from "../../../Assets/chapati.jpg";
+import { useState } from "react";
 import styles from "./FoodList.module.scss";
+import DialogPopUp from "../DialogPopUp/DialogPopup";
 
 const foodItems = [
   {
@@ -45,14 +47,23 @@ const foodItems = [
 ];
 
 export default function FoodList() {
-  // return <div>FoodList</div>;
+  const [visible, setVisible] = useState<boolean>(false);
+  const [selectedItem, setSelectedItem] = useState<any>(null);
+  console.log(visible);
+  const handleClick = (item: any) => {
+    setSelectedItem(item);
+    setVisible(true);
+  };
   return (
     <div className="grid w-full">
       {foodItems.map((items: any) => {
         return (
-          <div className="col-3">
-            <div className="col-12 cursor-pointer">
-              <div className="text-center p-3 border-round-sm bg-primary font-bold">
+          <div className="col-3" key={items.id}>
+            <div className="col-12">
+              <div
+                className="text-center p-3 border-round-sm bg-primary font-bold"
+                onClick={() => handleClick(items)}
+              >
                 <div className="images ">
                   <img
                     src={chapati}
@@ -71,6 +82,11 @@ export default function FoodList() {
           </div>
         );
       })}
+      <DialogPopUp
+        visible={visible}
+        selectedItem={selectedItem}
+        onHide={() => setVisible(false)}
+      />
     </div>
   );
 }

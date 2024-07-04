@@ -28,12 +28,6 @@ const resturantList = [
   },
 ];
 
-// const imageMapping: any = {
-//   TS1: ts1Image,
-//   ModX: modxImage,
-//   TS3: ts3Image,
-//   SEZ: sezImage,
-// };
 export default function Dashboard() {
   const navigate = useNavigate();
 
@@ -50,6 +44,8 @@ export default function Dashboard() {
         return SEZ;
       case "TS3":
         return TS3;
+      default:
+        return "";
     }
   }
   return (
@@ -66,7 +62,6 @@ export default function Dashboard() {
                 backgroundSize: "cover",
               }}
             >
-              {/* <img src={ts1Image} alt="" width="100px" height="100px" /> */}
               <h1 className="text-0 bg-cyan-400 border-round px-3">
                 {item.name}
               </h1>
