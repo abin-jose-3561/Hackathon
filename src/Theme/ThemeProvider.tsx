@@ -13,7 +13,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const [theme, setTheme] = useState<Theme>('light-theme'); 
   const toggleTheme = () => {
-    let themeLink = document.getElementById('app-theme') as HTMLLinkElement;
+    const themeLink = document.getElementById('app-theme') as HTMLLinkElement;
     console.log(themeLink.href)
       if (theme === 'dark-theme') {
           setTheme('light-theme');

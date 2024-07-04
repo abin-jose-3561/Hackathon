@@ -1,4 +1,3 @@
-import React, { Suspense } from "react";
 import Layout from "../Layout/Layout";
 import { Route, Routes } from "react-router-dom";
 import MostOrderedFood from "../Components/Analytics/MostOrderedFood/MostOrderedFood";
