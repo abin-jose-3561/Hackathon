@@ -2,8 +2,9 @@ import ToogleTheme from "../../Components/ToggleTheme/ToggleTheme";
 import SidebarOverlay from "../Sidebar/Sidebar";
 import styles from "./Navbar.module.scss";
 import { Toolbar } from "primereact/toolbar";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import LTTSLogo from "../../Assets/LTTSLogo.png";
+import { Button } from "primereact/button";
 
 enum RoutePathEnum {
   sharemeal = "Share Meal",
@@ -20,6 +21,8 @@ function getBreadcrumb(routePath: string): string {
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const pathSegments = location.pathname.split("/").filter(Boolean);
   const lastSegment = pathSegments[0];
   const breadcrumb = lastSegment ? getBreadcrumb(lastSegment) : "Unknown Route";
@@ -48,8 +51,19 @@ const Navbar = () => {
         end={endContent}
         className={`surface-50 p-0 px-2 border-noround border-none ${styles["topbarContainer"]}`}
       />
-      <div className="flex justify-content-between">
-        <p className="font-bold text-lg pl-3">{breadcrumb}</p>
+      <div className="flex justify-content-between align-items-center">
+        <p className="font-bold text-lg px-3">{breadcrumb}</p>
+        {breadcrumb === "Dashboard" ? (
+          <Button
+            label="Cart"
+            icon="pi pi-cart-arrow-down"
+            className="h-2rem mr-5"
+            outlined
+            onClick={() => navigate("/dashboard/cart")}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </>
   );
