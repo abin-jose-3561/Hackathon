@@ -35,7 +35,7 @@ export default function Dashboard() {
         return (
           <div className="col-6">
             <div
-              className="text-center h-15rem border-round-sm bg-primary font-bold"
+              className="text-center h-15rem border-round-sm bg-primary font-bold cursor-pointer"
               onClick={() => handleNavigation(item.name)}
             >
               <h2>{item.name}</h2>
