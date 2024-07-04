@@ -3,6 +3,7 @@ import SidebarOverlay from "../Sidebar/Sidebar";
 import styles from "./Navbar.module.scss";
 import { Toolbar } from "primereact/toolbar";
 import { useLocation } from "react-router-dom";
+import LTTSLogo from "../../Assets/LTTSLogo.png";
 
 enum RoutePathEnum {
   sharemeal = "Share Meal",
@@ -29,7 +30,12 @@ const Navbar = () => {
   const startContent = (
     <div className="flex align-items-center">
       <SidebarOverlay />
-      <p className="m-0 text-lg font-bold pr-2 ">ShareMeal</p>
+      <div className="flex gap-2">
+        <img src={LTTSLogo} alt="LTTS" width="25px" height="25px" />
+        <p className="m-0 text-lg font-bold pr-2 ">LTTS Meal Match</p>
+      </div>
+
+      {/* <p className="flex gap-2 m-0  font-semibold text-sm text-color-secondary"><span>|</span>Studio</p> */}
     </div>
   );
 

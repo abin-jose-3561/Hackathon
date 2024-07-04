@@ -38,7 +38,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   const handleNavigation = (name: any) => {
-    navigate(`/dahboard/restaurant/${name}`);
+    navigate(`/dashboard/restaurant/${name}`);
   };
   function imageMapping(name: string) {
     switch (name) {
@@ -59,7 +59,7 @@ export default function Dashboard() {
         return (
           <div className="col-6">
             <div
-              className={`flex flex-column justify-content-center align-items-center  h-15rem border-round-sm font-bold transition-duration-150 transition-colors ${styles.gridItem}`}
+              className={`flex flex-column justify-content-center align-items-center  h-15rem border-round-sm font-bold transition-duration-150 transition-colors border-round-sm cursor-pointer ${styles.gridItem}`}
               onClick={() => handleNavigation(item.name)}
               style={{
                 backgroundImage: `url(${bgImage})`,
